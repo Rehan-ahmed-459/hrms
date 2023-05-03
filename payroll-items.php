@@ -15,7 +15,7 @@
 		<meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
         <meta name="author" content="Dreamguys - Bootstrap Admin Template">
         <meta name="robots" content="noindex, nofollow">
-        <title>Payroll Items - HRMS admin template</title>
+        <title>Payroll Items - HRMS</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -127,7 +127,7 @@
 											<tr>
 												<th>Leave balance amount</th>
 												<td>Monthly remuneration</td>
-												<td>$5</td>
+												<td>₹50</td>
 												<td class="text-right">
 													<div class="dropdown dropdown-action">
 														<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
@@ -141,7 +141,7 @@
 											<tr>
 												<th>Arrears of salary</th>
 												<td>Additional remuneration</td>
-												<td>$8</td>
+												<td>₹80</td>
 												<td class="text-right">
 													<div class="dropdown dropdown-action">
 														<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
@@ -155,7 +155,7 @@
 											<tr>
 												<th>Gratuity</th>
 												<td>Monthly remuneration</td>
-												<td>$20</td>
+												<td>₹20</td>
 												<td class="text-right">
 													<div class="dropdown dropdown-action">
 														<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
@@ -267,7 +267,7 @@
 										<tbody>
 											<tr>
 												<th>Absent amount</th>
-												<td>$12</td>
+												<td>₹120</td>
 												<td class="text-right">
 													<div class="dropdown dropdown-action">
 														<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
@@ -280,7 +280,7 @@
 											</tr>
 											<tr>
 												<th>Advance</th>
-												<td>$7</td>
+												<td>₹70</td>
 												<td class="text-right">
 													<div class="dropdown dropdown-action">
 														<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
@@ -293,7 +293,7 @@
 											</tr>
 											<tr>
 												<th>Unpaid leave</th>
-												<td>$3</td>
+												<td>₹300</td>
 												<td class="text-right">
 													<div class="dropdown dropdown-action">
 														<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>

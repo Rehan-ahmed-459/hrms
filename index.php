@@ -1,6 +1,6 @@
 ﻿<?php
 	session_start();
-	error_reporting(0);
+	error_reporting(1);
 	include('includes/config.php');
 	if(strlen($_SESSION['userlogin'])==0){
 		header('location:login.php');
@@ -15,7 +15,7 @@
 		<meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
         <meta name="author" content="Dreamguys - Bootstrap Admin Template">
         <meta name="robots" content="noindex, nofollow">
-        <title>Dashboard - HRMS admin template</title>
+        <title>Dashboard - HRMS</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">

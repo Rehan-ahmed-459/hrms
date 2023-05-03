@@ -15,7 +15,7 @@
 		<meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
         <meta name="author" content="Dreamguys - Bootstrap Admin Template">
         <meta name="robots" content="noindex, nofollow">
-        <title>Employee Profile - HRMS admin template</title>
+        <title>Employee Profile - HRMS admin </title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -41,11 +41,7 @@
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
 		
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
+		
     </head>
     <body>
 		<!-- Main Wrapper -->
@@ -56,7 +52,15 @@
 			<!-- /Header -->
 			
 			<!-- Sidebar -->
-            <?php include_once("includes/sidebar.php");?>
+			<?php if($_SESSION['role']=='emp')
+			{
+				include_once("includes/employee-sidebar.php");
+
+			}
+			else{
+				include_once("includes/sidebar.php");
+			}
+			?>
 			<!-- /Sidebar -->
 			
 			<!-- Page Wrapper -->

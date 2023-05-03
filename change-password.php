@@ -3,7 +3,7 @@
 	error_reporting(0);
 	include_once('includes/config.php');
 	include_once 'includes/functions.php';
-	if(strlen($_SESSION['userlogin'])==0){
+	if(!isset($_SESSION['userlogin']) && strlen($_SESSION['userlogin'])==0){
 		header('location:login.php');
 	}elseif (isset($_POST['change_pass'])) {
 		$currentpassword=htmlspecialchars($_POST['password']);
@@ -21,11 +21,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <meta name="description" content="Smarthr - Bootstrap Admin Template">
-		<meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
-        <meta name="author" content="Dreamguys - Bootstrap Admin Template">
         <meta name="robots" content="noindex, nofollow">
-        <title>Change Password - HRMS admin template</title>
+        <title>Change Password - HRMS </title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">

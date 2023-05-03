@@ -65,7 +65,19 @@
 			<!-- /Header -->
 			
 			<!-- Sidebar -->
-            <?php include_once("includes/sidebar.php");?>
+			<?php include_once("includes/header.php");?>
+			<!-- /Header -->
+			
+			<!-- Sidebar -->
+			<?php if($_SESSION['role']=='emp')
+			{
+				include_once("includes/employee-sidebar.php");
+
+			}
+			else{
+				include_once("includes/sidebar.php");
+			}
+			?>
 			<!-- /Sidebar -->
 			
 			<!-- Page Wrapper -->

@@ -2,13 +2,14 @@
 	session_start();
 	error_reporting(0);
 	include_once("includes/config.php");
-	if($_SESSION['userlogin']>0){
+	if(isset($_SESSION['userlogin']) && $_SESSION['uselogin']>0){
 		header('location:index.php');
 	}elseif(isset($_POST['login'])){
 		$_SESSION['userlogin'] = $_POST['username'];
 		$username = htmlspecialchars($_POST['username']);
 		$password = htmlspecialchars($_POST['password']);
-		$sql = "SELECT UserName,Password from users where UserName=:username";
+	
+		$sql = "SELECT UserName,Password,role from users where UserName=:username";
 		$query = $dbh->prepare($sql);
 		$query->bindParam(':username',$username,PDO::PARAM_STR);
 		$query-> execute();
@@ -17,14 +18,23 @@
 			foreach ($results as $row) {
 				$hashpass=$row->Password;
 			}//verifying Password
-			if (password_verify($password, $hashpass)) {
-				$_SESSION['userlogin']=$_POST['username'];
-				echo "<script>window.location.href= 'index.php'; </script>";
-			}
+				if (password_verify($password, $hashpass)) {
+					$_SESSION['userlogin']=$_POST['username'];
+				if($row->role == 'emp'){
+					echo "<script>window.location.href= 'employee-dashboard.php'; </script>";
+					$_SESSION['userlogin']=$_POST['username'];
+					$_SESSION['role']=$_POST[$row->role];
+				}
+				else if($row->role == 'admin'){
+					$_SESSION['userlogin']=$_POST['username'];
+					$_SESSION['role']=$_POST[$row->role];
+					echo "<script>window.location.href= 'index.php'; </script>";
+				}
+			
 			else {
 				$wrongpassword='
 				<div class="alert alert-danger alert-dismissible fade show" role="alert">
-				<strong>Oh Snapp!😕</strong> Alert <b class="alert-link">Password: </b>You entered wrong password.
+				<strong>Oh Snapp!😕</strong> Alert <b class="alert-link"></b>Username or Password is Incorrect.
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -42,6 +52,7 @@
 			</div>';
 		}
 	}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

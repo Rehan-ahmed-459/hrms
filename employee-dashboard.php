@@ -2,7 +2,7 @@
 	session_start();
 	error_reporting(0);
 	include('includes/config.php');
-	if(strlen($_SESSION['userlogin'])==0){
+	if(!isset($_SESSION['userlogin']) && strlen($_SESSION['userlogin'])==0){
 		header('location:login.php');
 	}
  ?>
@@ -11,11 +11,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <meta name="description" content="Smarthr - Bootstrap Admin Template">
-		<meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
-        <meta name="author" content="Dreamguys - Bootstrap Admin Template">
+		
         <meta name="robots" content="noindex, nofollow">
-        <title>Employee Dashboard - HRMS admin template</title>
+        <title>Employee Dashboard - HRMS</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -32,11 +30,6 @@
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
 		
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
     </head>
     <body>
 		<!-- Main Wrapper -->
@@ -60,7 +53,7 @@
 			<!-- /Header -->
 			
 			<!-- Sidebar -->
-            <?php include_once("includes/sidebar.php");?>
+            <?php include_once("includes/employee-sidebar.php");?>
 			<!-- /Sidebar -->
 			
 			<!-- Page Wrapper -->
@@ -75,7 +68,7 @@
 									<img alt="" src="assets/img/profiles/avatar-02.jpg">
 								</div>
 								<div class="welcome-det">
-									<h3>Welcome, John Doe</h3>
+									<h3>Welcome, <?php echo $_SESSION['userlogin'];?></h3>
 									<p>Monday, 20 May 2019</p>
 								</div>
 							</div>
